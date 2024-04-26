@@ -12,5 +12,15 @@ addEstudiante.addEventListener('click', () => {
         contraseña: contraseña
     };
     estudiantes.push(estudiante);
+    const respuesta = document.getElementById("respuesta");
+    respuesta.innerHTML = "";
+
+    estudiantes.forEach(estudiante => {
+        respuesta.innerHTML += `
+            <p id="resultado">Nombre: ${estudiante.nombre}, No. de Cuenta: ${estudiante.noCuenta} Contraseña: ${estudiante.contraseña}</p>
+            <hr> <!-- Separador entre estudiantes -->
+        `;
+    });
+
 });
 
